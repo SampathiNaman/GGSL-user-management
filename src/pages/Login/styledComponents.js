@@ -30,9 +30,9 @@ export const LogoFrame = styled.div`
 
 export const Logo = styled.p`
   color: white;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 14px;
   margin-bottom: 0;
 `;
 
