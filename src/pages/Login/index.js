@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { Form } from "react-bootstrap";
 import { colors } from "../../styles/theme";
-import { Background, StyledCard, Logo, Title, LoginButton, ErrorMessage } from "./styledComponents";
+import { Background, StyledCard, LogoFrame, Logo, Title, LoginButton, ErrorMessage } from "./styledComponents";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -51,7 +51,9 @@ const Login = () => {
   return (
     <Background>
       <StyledCard>
-        <Logo />  
+        <LogoFrame>
+          <Logo>UM</Logo>
+        </LogoFrame>  
         <Title>Login to Your Account</Title>
 
         <Form onSubmit={handleLogin} className="mt-3">

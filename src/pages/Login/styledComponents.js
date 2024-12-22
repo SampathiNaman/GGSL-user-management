@@ -19,12 +19,21 @@ export const StyledCard = styled(Card)`
   padding: 20px;
 `;
 
-export const Logo = styled.div`
+export const LogoFrame = styled.div`
   width: 60px;
   height: 60px;
   background-color: ${colors.secondary};
   border-radius: 50%;
   margin: 0 auto;
+  text-align: center;
+`;
+
+export const Logo = styled.p`
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0;
 `;
 
 export const Title = styled.h1`
