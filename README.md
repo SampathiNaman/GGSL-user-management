@@ -2,6 +2,10 @@
 
 This repository contains a React-based application for managing users, integrating with the Reqres API. The project is structured to handle user authentication, display paginated user data, and allow basic user editing and deletion.
 
+## Website
+You can access the deployed project here: [User Management App](https://user-management-naman.netlify.app/)
+
+
 ## **Table of Contents**
 1. [Features](#features)  
 2. [Technologies Used](#technologies-used)  
@@ -40,13 +44,10 @@ Ensure you have the following installed on your system:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/SampathiNaman/GGSL-user-management.git
    ```
-2. Navigate to the project folder:
-    ```bash
-    cd your-repository
-    ```
-3. Install dependencies:
+   
+2. Install dependencies:
     ```bash
     npm install
     ```
