@@ -1,14 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../../styles/theme';
-import { Button, Card } from "react-bootstrap";
-
-export const Background = styled.div`
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, ${colors.light}, ${colors.primary});
-`;
+import { Card } from "react-bootstrap";
 
 export const StyledCard = styled(Card)`
   max-width: 400px;
@@ -34,24 +26,4 @@ export const Logo = styled.p`
   font-weight: bold;
   margin-top: 14px;
   margin-bottom: 0;
-`;
-
-export const Title = styled.h1`
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: ${colors.primary};
-  text-align: center;
-  margin-top: 1rem;
-`;
-
-export const LoginButton = styled(Button)`
-  backgroundColor: ${colors.primary},
-  border: "none",
-`;
-
-export const ErrorMessage = styled.div`
-  color: #d8000c;
-  border: none;
-  text-align: center;
-  margin-top: 1rem;
 `;

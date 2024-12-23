@@ -4,7 +4,8 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { Form } from "react-bootstrap";
 import { colors } from "../../styles/theme";
-import { Background, StyledCard, LogoFrame, Logo, Title, LoginButton, ErrorMessage } from "./styledComponents";
+import {Background, Title, ErrorMessage, StyledButton} from "../../GlobalStyles";
+import { StyledCard, LogoFrame, Logo} from "./styledComponents";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,11 +24,6 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
-    if (!email || !password) {
-      setError("Email and Password are required.");
-      return;
-    }
 
     setError("");
     setLoading(true);
@@ -81,14 +77,14 @@ const Login = () => {
             />
           </Form.Group>
 
-          <LoginButton
+          <StyledButton
             type="submit"
-            variant="primary"
             disabled={loading}
-            style = {{width: "100%"}}
+            className="w-100"
+            
           >
             {loading ? "Logging in..." : "Log In"}
-          </LoginButton>
+          </StyledButton>
 
         {error && <ErrorMessage>{error}</ErrorMessage>}
 
