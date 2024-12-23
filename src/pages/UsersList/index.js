@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import axios from 'axios'
 import { TailSpin } from 'react-loader-spinner';
 import {Container, Row, Pagination } from 'react-bootstrap';
@@ -28,7 +28,7 @@ export const UsersList = () => {
     setCurrentPage(page);
   };
 
-  const fetchUsers = async () => {
+  const fetchUsers = useCallback(async () => {
     setApiState(apiStatus.LOADING);
     setError('');
     try {
@@ -46,11 +46,11 @@ export const UsersList = () => {
       setError('Failed to fetch users. Please try again later.');
       setCurrentPage(DEFAULT_CURRENT_PAGE);
     }
-  };
+  }, [currentPage]);
 
   useEffect(() => {
     fetchUsers();
-  }, [currentPage]);
+  }, [fetchUsers]);
 
   const renderLoader = () => (
 

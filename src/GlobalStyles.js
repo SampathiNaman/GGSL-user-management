@@ -1,6 +1,5 @@
 import { createGlobalStyle, styled } from "styled-components";
 import {colors} from "./styles/theme";
-import { Button } from "react-bootstrap";
 
 const GlobalStyles = createGlobalStyle`
 body {

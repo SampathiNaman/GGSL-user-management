@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {Title} from '../../GlobalStyles';
 import {colors} from '../../styles/theme';
 
 export const StyledCard = styled.div`
