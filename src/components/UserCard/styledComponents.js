@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {colors} from '../../styles/theme';
 
-export const StyledCard = styled.div`
+export const UserProfileCard = styled.div`
   background-color: white;
   max-width: unset;
   display: flex;
@@ -12,6 +12,9 @@ export const StyledCard = styled.div`
   padding: 12px;
   margin: 0 auto;
   transition: transform 0.2s ease-in-out;
+  opacity: ${(props) => props.disabled ? 0.5 : 1};
+  pointer-events: ${(props) => props.disabled ? 'none' : 'auto'};
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);

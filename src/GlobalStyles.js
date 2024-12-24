@@ -1,4 +1,5 @@
 import { createGlobalStyle, styled } from "styled-components";
+import { Card } from "react-bootstrap";
 import {colors} from "./styles/theme";
 
 const GlobalStyles = createGlobalStyle`
@@ -30,6 +31,14 @@ export const Background = styled.div`
   background: linear-gradient(135deg, ${colors.light}, ${colors.primary});
 `;
 
+export const StyledCard = styled(Card)`
+  max-width: ${props => props.maxwidth || '500px' };
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 20px;
+`;
 
 export const Title = styled.h1`
   font-size: ${(props) => props.size || '1.5rem' };
@@ -39,33 +48,31 @@ export const Title = styled.h1`
   margin-top: 1rem;
 `;
 
-export const IconButton = styled.button`
-  background-color: transparent;
+export const Button = styled.button`
+  color: ${props => props.color || 'white'};
+  background-color: ${colors.primary};
   border: none;
   border-radius: 6px;
   outline: none;
   cursor: pointer;
-  padding: 4px 8px;
-
-  &:hover {
-    background-color: ${colors.light};
-  }
+  padding: 6px 12px;
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
   }
-  `;
-  
-  export const StyledButton = styled(IconButton)`
-  color: white;
-  background-Color: ${colors.primary};
-  padding: 0.5rem 1rem;
-  margin: 0.5rem 0;
+`;
+
+export const IconButton = styled(Button)`
+  color: ${colors.primary};
+  background-color: transparent;
 
   &:hover {
-    background-color: ${colors.primary};
+    background-color: ${colors.light};
   }
+  `;
+  
+  export const StyledButton = styled(Button)`
 
   &:active {
     background-color: ${colors.secondary};

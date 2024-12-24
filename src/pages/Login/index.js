@@ -4,8 +4,8 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { Form } from "react-bootstrap";
 import { colors } from "../../styles/theme";
-import {Background, Title, ErrorMessage, StyledButton} from "../../GlobalStyles";
-import { StyledCard, LogoFrame, Logo} from "./styledComponents";
+import {Background, StyledCard, Title, ErrorMessage, StyledButton} from "../../GlobalStyles";
+import { LogoFrame, Logo} from "./styledComponents";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <Background>
-      <StyledCard>
+      <StyledCard maxwidth='400px'>
         <LogoFrame>
           <Logo>UM</Logo>
         </LogoFrame>  

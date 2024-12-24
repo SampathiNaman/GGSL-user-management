@@ -22,7 +22,7 @@ function App() {
 
         <Route element={<ProtectedRoute />}>
           <Route path="/users-list" element={<UsersList />} />
-          <Route path="/edit-user" element={<EditUser />} />
+          <Route path="/edit-user/:id" element={<EditUser />} />
         </Route>
         
         <Route path="*" element={<Navigate to="/not-found" replace />} />

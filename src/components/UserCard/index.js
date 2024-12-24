@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Col, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { StyledCard, CardImg, CardTitle, CardText, IconsContainer } from './styledComponents';
+import { UserProfileCard, CardImg, CardTitle, CardText, IconsContainer } from './styledComponents';
 import { IconButton } from '../../GlobalStyles';
 import { colors } from '../../styles/theme';
 
@@ -29,19 +29,19 @@ const UserCard = (props) => {
 
   return (
     <Col xs={12} md={6} xl={4} className='my-3'>
-      <StyledCard>
+      <UserProfileCard disabled={disableDelete}>
         <CardImg src={user.avatar} alt="Profile image" />
         <Card.Body>
           <CardTitle>{user.first_name} {user.last_name}</CardTitle>
           <CardText>{user.email}</CardText>
           <IconsContainer>
-            <Link to="/edit-user">
-              <IconButton><FontAwesomeIcon icon={faPenToSquare} color={colors.primary} /></IconButton>
+            <Link to={'/edit-user/'+user.id}>
+              <IconButton disabled={disableDelete}><FontAwesomeIcon icon={faPenToSquare} color={colors.primary} /></IconButton>
             </Link>
             <IconButton disabled={disableDelete} onClick={handleDelete} className='ms-3'><FontAwesomeIcon icon={faTrash} color={colors.primary} /></IconButton>
           </IconsContainer>
         </Card.Body>
-      </StyledCard>
+      </UserProfileCard>
     </Col>
   )
 }

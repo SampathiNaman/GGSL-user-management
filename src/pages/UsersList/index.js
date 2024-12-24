@@ -1,8 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import axios from 'axios'
-import { TailSpin } from 'react-loader-spinner';
-import {Container, Row, Pagination } from 'react-bootstrap';
-import { Background, Title, ErrorMessage } from '../../GlobalStyles'
+import {Container, Row, Spinner, Pagination } from 'react-bootstrap';
+import { Background, Title, ErrorMessage, StyledCard, StyledButton } from '../../GlobalStyles'
 import { Wrapper, StyledPagination } from './styledComponents';
 import {colors} from '../../styles/theme'
 
@@ -32,7 +31,7 @@ export const UsersList = () => {
     setApiState(apiStatus.LOADING);
     setError('');
     try {
-      const response = await axios.get(`https://reqres.in/api/users?page=${currentPage || DEFAULT_CURRENT_PAGE}`);
+      const response = await axios.get(`https://reqres.in/api/users?page=${currentPage}`);
       if (response.data.data.length === 0) {
         throw new Error('No users found.');
       }
@@ -53,15 +52,7 @@ export const UsersList = () => {
   }, [fetchUsers]);
 
   const renderLoader = () => (
-
-    <TailSpin
-      visible={apiState === apiStatus.LOADING}
-      height="60"
-      width="60"
-      color={colors.dark}
-      ariaLabel="tail-spin-loading"
-      radius={0}
-    />
+    <Spinner animation="border" role="status" />
   )
 
   const renderUsers = () => (
@@ -101,9 +92,12 @@ export const UsersList = () => {
   )
 
   const renderError = () => (
-    <ErrorMessage>
-      {error}
-    </ErrorMessage>
+    <StyledCard>
+      <ErrorMessage>
+        {error}
+      </ErrorMessage>
+        <StyledButton onClick={fetchUsers} className='mx-auto mt-4' >Retry</StyledButton>
+    </StyledCard>
   );
 
   const renderContent = () => {
